@@ -76,14 +76,12 @@ foreach ($tweets as $tweet) {
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($tweets as $tweet): ?>
-                       <?php if ($tweet['userName'] === 'さとう'): ?>
+                <?php foreach ($satouTweets as $tweet): ?>
                         <tr>
                             <td><?php echo $tweet['userName']; ?></td>
                             <td><?php echo $tweet['tweets']; ?></td>
                             <td><?php echo $tweet['created_at']; ?></td>
                         </tr>
-                        <?php endif; ?>
                     <?php endforeach; ?>
                 </tbody>
             </table>
