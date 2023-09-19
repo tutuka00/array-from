@@ -2,13 +2,13 @@
 $tweets = [
     [
         'id' => 1,
-        'userName' => 'さとう',
+        'userName' => 'くろさき',
         'tweets' => 'お腹すいた',
         'created_at' => '2022/10/22',
     ],
     [
         'id' => 2,
-        'userName' => 'さとう',
+        'userName' => 'いしだ',
         'tweets' => 'カレーを食べたい',
         'created_at' => '2022/10/23',
     ],
@@ -38,12 +38,18 @@ $tweets = [
     ],
     [
         'id' => 7,
-        'userName' => 'さとう',
+        'userName' => 'さど',
         'tweets' => 'お散歩',
         'created_at' => '2022/10/28',
     ],
-]; ?>
-
+]; 
+$satouTweets = [];
+foreach ($tweets as $tweet) {
+    if ($tweet["userName"] == "さとう") {
+        $satouTweets[] = $tweet;
+    }
+}
+?>
 <!-- 以下はHTMLのコードになります -->
 <!-- 今は「こんな処理をしているんだな〜」とざっくり見ていただけたらと思います！ -->
 <!DOCTYPE html>
@@ -70,7 +76,7 @@ $tweets = [
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($tweets as $tweet): ?>
+                <?php foreach ($satouTweets as $tweet): ?>
                         <tr>
                             <td><?php echo $tweet['userName']; ?></td>
                             <td><?php echo $tweet['tweets']; ?></td>
